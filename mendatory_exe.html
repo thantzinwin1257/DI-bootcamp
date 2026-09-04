@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Instructions </title>
+    <head>Javascript Exercises</head>
+    <ul>
+        <li>Exercise 1: List of people</li>
+        <li>Exercise 2: Your favorite colors</li>
+        <li>Exercise 3: Repeat the question</li>
+        <li>Exercise 4: Building management</li>
+        <li>Exercise 5: Family of keys and values</li>
+        <li>Exercise 6: Rudolf</li>
+        <li>Exercise 7: Secret Group</li>
+    </ul>
+
+    <p>----------------------------------------------------------------------------------------------------------</p>
+
+    
+</head>
+<body>
+    <p> 1 </p>
+    <script>
+        const peoples = ["Jack", "Philip", "Sarah", "Amanda", "Bernard", "Kyle"];
+        let secretSocietyName = peoples
+        let firstLetters = peoples.map(name => name[0]);
+        firstLetters.sort();
+        let secretSociety = firstLetters.join('');
+        console.log(secretSociety);
+    </script>
+
+    <p> 2 </p>
+    <script>
+        const details = {
+  my: 'name',
+  is: 'Rudolf',
+  the: 'reindeer'
+}
+
+        let sentence = '';
+       for (const key in details) {
+            sentence += `${key} ${details[key]} `;
+        }
+        console.log(sentence.trim());  
+        console.log(`my ${details.my} is ${details.is} the ${details.the}`);
+
+    </script>
+
+    <p> 3 </p>
+    <script>
+        const family = {
+            father: "John",
+            mother: "Jane",
+            son: "Mike",
+            daughter: "Emily"
+        };
+        for (const key in family) {
+            console.log(key);
+        }
+        for (const value in family) {
+            console.log(family[value]);
+    
+        }
+    console.log(`Mike: father and mother are ${family.father}, ${family.mother} and sister is ${family.daughter} .`);
+
+
+    </script>
+
+    <p> 4 </p>
+    <script>
+        const building = {
+    numberOfFloors: 4,
+    numberOfAptByFloor: {
+        firstFloor: 3,
+        secondFloor: 4,
+        thirdFloor: 9,
+        fourthFloor: 2,
+    },
+    nameOfTenants: ["Sarah", "Dan", "David"],
+    numberOfRoomsAndRent:  {
+        sarah: [3, 990],
+        dan:  [4, 1000],
+        david: [1, 500],
+    },
+}
+console.log(building.numberOfFloors);
+console.log(building.numberOfAptByFloor.firstFloor, building.numberOfAptByFloor.thirdFloor);
+console.log(building.nameOfTenants[1], building.numberOfRoomsAndRent.dan[0])
+for (const tenant of building.nameOfTenants) {
+    let sumOfrent =building.numberOfRoomsAndRent.sarah[1] + building.numberOfRoomsAndRent.david[1];
+    let totalRent = sumOfrent;
+  if  (totalRent > building.numberOfRoomsAndRent.dan[1] ) {
+    building.numberOfRoomsAndRent.dan[1] = 1200;
+    console.log(tenant);
+  }
+}
+    </script>
+
+    <p> 5 </p>
+    <script>
+while (true) {
+  let userInput = prompt("Please enter a number:");
+  let number = Number(userInput);
+  if (typeof number !== "number" || isNaN(number)) {
+   alert("Please enter a valid number.");
+    continue;
+  }
+  if (number >= 10) {
+    console.log(`You entered ${number}, which is greater than or equal to 10.`);
+    break;
+  }
+  alert("The number is smaller than 10. Please enter a new number.");
+}
+    </script>
+
+<p> 6 </p>
+    <script>
+
+const colors = ["blue", "red", "green", "yellow", "purple"];
+const suffixes = ["1st", "2nd", "3rd", "4th", "5th"];
+for (let i = 0; i < colors.length; i++) {
+  console.log(`My ${suffixes[i]} choice is ${colors[i]}`);
+}
+      
+    </script>
+
+    <p> 7 </p>
+    <script>
+const people = ["Greg", "Mary", "Devon", "James"];
+people.shift();
+people.splice(3,1,"Jason");
+people.push("YourName");
+const maryIndex = people.indexOf("Mary");
+console.log(people);
+console.log(maryIndex);
+people.slice(1, 4)
+const fooIndex = people.indexOf("Foo");
+console.log(fooIndex);
+const last = people[people.length -1];
+console.log(last);
+
+const names = ['Mary', 'Devon', 'James', 'Jason', 'YourName']
+
+for (const name of names) {
+  console.log(name);
+
+  if (name === 'Devon') {
+    break;
+  }
+
+  console.log(name);
+}
+    </script>
+
+   <script src="javascript.js"></script>
+
+</body>
+</html>
